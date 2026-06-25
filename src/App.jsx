@@ -9,7 +9,7 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(true); 
 
   return (
-    /* FIXED: Using conditional class injection for Tailwind v4 */
+    
     <div className={darkMode ? 'dark' : ''}>
       <div className="flex min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
         
@@ -20,7 +20,7 @@ const App = () => {
           onPageChange={setCurrentPage}
         />
 
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-w-0">
           <Header  
             sideBarCollapsed={sideBarCollapsed}
             onToggleSideBar={() => setSideBarCollapsed(!sideBarCollapsed)}
@@ -29,8 +29,8 @@ const App = () => {
             onPageChange={setCurrentPage}
           />
           
-          <main className="p-6 flex-1 overflow-y-auto bg-transparent">
-            <div className='p-6 space-y-6'>
+          <main className="p-6 flex-1 overflow-y-auto bg-transparent w-full overflow-x-hidden">
+            <div className='p-6 space-y-6 max-w-7xl mx-auto'>
               {currentPage === 'dashboard' && <Dashbboard />}
               {currentPage === 'overview' && <div className="text-xl font-bold">Analytics Overview Page</div>}
               {currentPage === 'reports' && <div className="text-xl font-bold">Analytics Reports Page</div>}
