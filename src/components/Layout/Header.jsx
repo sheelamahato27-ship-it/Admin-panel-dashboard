@@ -10,7 +10,7 @@ const Header = ({ sideBarCollapsed, onToggleSideBar, darkMode, onToggleDarkMode,
     e.preventDefault();
     if (searchQuery.trim()) {
       alert(`Searching system data for: "${searchQuery}"`);
-      // You can connect this to a search filter state or page later if needed
+      
     }
   };
 
@@ -51,7 +51,7 @@ const Header = ({ sideBarCollapsed, onToggleSideBar, darkMode, onToggleDarkMode,
 
           {/* Right Section */}
           <div className='flex items-center space-x-3 relative'>
-            {/* Quick Action: Redirects directly to adding a product view */}
+           
             <button 
               onClick={() => onPageChange('products')}
               className='hidden lg:flex items-center space-x-2 py-2 px-4 bg-linear-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:shadow-lg transition-all active:scale-95'

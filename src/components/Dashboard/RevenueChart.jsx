@@ -53,14 +53,14 @@ const RevenueChart = () => {
             data={data}
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           >
-            {/* Fix: strokeDasharray and stroke typos */}
+           
             <CartesianGrid
               strokeDasharray='3 3'
               stroke='#e2e8f0'
               opacity={0.3}
             />
 
-            {/* Fix: fontSize, tickLine */}
+        
             <XAxis
               dataKey='month'
               stroke='#64748b'
@@ -69,7 +69,7 @@ const RevenueChart = () => {
               axisLine={false}
             />
 
-            {/* Fix: fontSize, tickLine */}
+           
             <YAxis
               stroke='#64748b'
               fontSize={12}
@@ -80,7 +80,7 @@ const RevenueChart = () => {
 
            <Tooltip
                contentStyle={{
-                   backgroundColor: '#ffffff', // Ensures a consistent white background
+                   backgroundColor: '#ffffff', 
                    border: 'none',
                    borderRadius: '12px',
                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',

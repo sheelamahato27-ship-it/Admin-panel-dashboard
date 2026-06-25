@@ -28,7 +28,7 @@ const TableSection = () => {
                 let aValue = a[sortConfig.key];
                 let bValue = b[sortConfig.key];
 
-                // Special treatment for Amount strings like "$2,399"
+                
                 if (sortConfig.key === 'amount') {
                     aValue = parseFloat(a.amount.replace(/[^0-9.-]+/g, ""));
                     bValue = parseFloat(b.amount.replace(/[^0-9.-]+/g, ""));
@@ -42,7 +42,7 @@ const TableSection = () => {
         return sortableItems;
     }, [recentOrders, sortConfig]);
 
-    // 4. Request sort direction toggle
+    // Request sort direction toggle
     const requestSort = (key) => {
         let direction = 'asc';
         if (sortConfig.key === key && sortConfig.direction === 'asc') {

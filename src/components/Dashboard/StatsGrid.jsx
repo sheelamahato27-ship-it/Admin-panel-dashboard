@@ -9,7 +9,7 @@ const StatsGrid = () => {
             change: '+12.5%',
             trend: 'up',
             icon: DollarSign,
-            color: 'from-emerald-500 to-teal-600', // Added missing dash in "to-teal-600"
+            color: 'from-emerald-500 to-teal-600', 
             bgColor: 'bg-emerald-50 dark:bg-emerald-900',
             textColor: 'text-emerald-600 dark:text-emerald-400',
         },
@@ -19,7 +19,7 @@ const StatsGrid = () => {
             change: '+8.2%',
             trend: 'up',
             icon: Users,
-            color: 'from-blue-500 to-indigo-600', // Added missing dash in "to-indigo-600"
+            color: 'from-blue-500 to-indigo-600', 
             bgColor: 'bg-blue-50 dark:bg-blue-900',
             textColor: 'text-blue-600 dark:text-blue-400',
         },
@@ -29,9 +29,9 @@ const StatsGrid = () => {
             change: '+15.3%',
             trend: 'up',
             icon: ShoppingCart,
-            color: 'from-purple-500 to-pink-600', // Added missing dash in "to-pink-600"
-            bgColor: 'bg-purple-50 dark:bg-purple-900', // Added missing "bg-" in dark mode
-            textColor: 'text-purple-600 dark:text-purple-400', // Fixed ":" to "-" in text-purple:400
+            color: 'from-purple-500 to-pink-600', 
+            bgColor: 'bg-purple-50 dark:bg-purple-900', 
+            textColor: 'text-purple-600 dark:text-purple-400', 
         },
         {
             title: 'Page Views',
@@ -39,16 +39,16 @@ const StatsGrid = () => {
             change: '-2.1%',
             trend: 'down',
             icon: Eye,
-            color: 'from-orange-500 to-red-600', // Added missing dash in "to-red-600"
-            bgColor: 'bg-orange-50 dark:bg-orange-900', // Added missing "bg-" in dark mode
-            textColor: 'text-orange-600 dark:text-orange-400', // Fixed ":" to "-" in text-orange:400
+            color: 'from-orange-500 to-red-600', 
+            bgColor: 'bg-orange-50 dark:bg-orange-900', 
+            textColor: 'text-orange-600 dark:text-orange-400', 
         },
     ];
 
     return (
-        // Fixed responsive grid naming: grid-cols-1 instead of grid-col, md: instead of mg:
+       
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4'>
-            {stats.map((stat, index) => { // Changed internal variable from 'stats' to 'stat' to avoid masking
+            {stats.map((stat, index) => { 
                 return (
                     <div 
                         className='bg-white dark:bg-slate-900 backdrop-blur-xl rounded-2xl p-6
@@ -56,7 +56,7 @@ const StatsGrid = () => {
                         transition-all duration-300 group flex flex-col justify-between' // Added flex-col layout for better alignment
                         key={index}
                     > 
-                        <div className='flex items-start justify-between'> {/* Fixed typo: fleex -> flex */}
+                        <div className='flex items-start justify-between'> 
                             <div className='flex-1'>
                                 <p className='text-xs font-medium text-slate-600 dark:text-slate-400 mb-2'>
                                     {stat.title}
@@ -79,16 +79,16 @@ const StatsGrid = () => {
                                 </div>
                             </div>
 
-                            {/* Added space before stat.bgColor string concatenation and fixed hover group scale syntax */}
+                           
                             <div className={`p-3 rounded-xl ${stat.bgColor} group-hover:scale-110 transition-all duration-300`}>
                                 <stat.icon className={`w-6 h-6 ${stat.textColor}`}/>
                             </div>
                         </div>
 
                         {/* ProgressBar */}
-                        <div className='mt-4 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden'> {/* Fixed typo: ng-slate-100 -> bg-slate-100 */}
+                        <div className='mt-4 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden'> 
                             <div 
-                                className={`h-full bg-linear-to-r ${stat.color} rounded-full transition-all duration-300`} // Fixed transition rule and gradient name
+                                className={`h-full bg-linear-to-r ${stat.color} rounded-full transition-all duration-300`} 
                                 style={{ width: stat.trend === 'up' ? '75%' : '45%' }}
                             />
                         </div>

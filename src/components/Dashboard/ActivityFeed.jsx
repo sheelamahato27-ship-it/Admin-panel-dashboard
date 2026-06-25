@@ -28,10 +28,10 @@ const ActivityFeed = () => {
             id: 3,
             type: 'payment',
             icon: CreditCard,
-            title: 'Payment processed', // Fixed typo
+            title: 'Payment processed', 
             description: 'payment of $1,999 completed',
             time: '12 minutes ago',
-            color: 'text-purple-500', // Fixed syntax & typo
+            color: 'text-purple-500', 
             bgColor: 'bg-purple-100 dark:bg-purple-900',
         },
         {
@@ -52,7 +52,7 @@ const ActivityFeed = () => {
             description: 'iPhone 15 pro stock is low',
             time: '2 hours ago',
             color: 'text-red-500',
-            bgColor: 'bg-red-100 dark:bg-red-900', // Fixed bg:red-100
+            bgColor: 'bg-red-100 dark:bg-red-900', 
         },
     ];
 
