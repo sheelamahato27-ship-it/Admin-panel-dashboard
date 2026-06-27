@@ -10,17 +10,18 @@ const SalesChart = () => {
   ];
 
   return (
-    <div className='bg-white dark:bg-slate-900 backdrop-blur-xl rounded-2xl p-6 border border-slate-200 dark:border-slate-700'>
-      <div className='mb-6'>
-        <h3 className='text-lg font-bold text-slate-800 dark:text-white'>
+    <div className='bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6 border border-slate-200 dark:border-slate-700 w-full'>
+      <div className='mb-4 sm:mb-6'>
+        <h3 className='text-base sm:text-lg font-bold text-slate-800 dark:text-white'>
           Sales by Category
         </h3>
-        <p className='text-sm text-slate-500 dark:text-slate-400'>
+        <p className='text-xs sm:text-sm text-slate-500 dark:text-slate-400'>
           Production Distribution
         </p>
       </div>
       
-      <div className='h-48'>
+      {/* Reduced explicit height slightly on mobile platforms to fit screen views natively */}
+      <div className='h-40 sm:h-48 w-full mx-auto'>
         <ResponsiveContainer width='100%' height='100%'>
           <PieChart>
             <Tooltip
@@ -36,9 +37,9 @@ const SalesChart = () => {
               data={data}
               cx='50%'
               cy='50%'
-              innerRadius={60}
-              outerRadius={80}
-              paddingAngle={5}
+              innerRadius={50}
+              outerRadius={70}
+              paddingAngle={4}
               dataKey='value'
             >
               {data.map((entry, index) => (
@@ -48,26 +49,24 @@ const SalesChart = () => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className='space-y-3'>
+
+      <div className='space-y-2.5 sm:space-y-3 mt-2'>
         {data.map((item, index) => {
-           return <div className='flex items-center justify-between ' key={index}>
-            <div className='flex items-center space-x-3'>
-                <div className='w-3 h-3 rounded-full 'style={{backgroundColor:item.color}}>
-                   
-                </div>
-                 <span className='text-sm text-slate-600 dark:text-slate-400'>
-                        {item.name}</span>
-                     </div>
-                     <div className='text-sm font-semibold text-slate-800 dark:text-white'>
-                        {item.value}%
-
-                     </div>
-
-             </div>;
+           return <div className='flex items-center justify-between' key={index}>
+            <div className='flex items-center space-x-2 sm:space-x-3 min-w-0'>
+                <div className='w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full shrink-0' style={{backgroundColor:item.color}} />
+                <span className='text-xs sm:text-sm text-slate-600 dark:text-slate-400 truncate'>
+                    {item.name}
+                </span>
+             </div>
+             <div className='text-xs sm:text-sm font-semibold text-slate-800 dark:text-white shrink-0 ml-2'>
+                {item.value}%
+             </div>
+           </div>;
         })}
       </div>
     </div>
   )
 }
 
-export default SalesChart
+export default SalesChart;
