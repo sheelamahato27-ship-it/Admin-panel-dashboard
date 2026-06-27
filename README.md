@@ -2,9 +2,8 @@
 
 A sleek, fast, and fully responsive Admin Panel Dashboard built using **React**, **Vite**, **Tailwind CSS**, and **Recharts**. This dashboard features a highly modular architecture, dynamic data visualizations, advanced data sorting, and a fully integrated Dark Mode theme toggle.
 
-Vercel Link-> 
+Vercel Link-> admin-panel-dashboard-mu.vercel.app
 
----
 
 ## 🚀 Features
 
@@ -35,5 +34,29 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
-cd YOUR_REPO_NAME
+git clone [https://github.com/sheelamahato27-ship-it/YAdmin-panel-dashboard.git](https://github.com/sheelamahato27-ship-it/Admin-panel-dashboard.git)
+cd Admin-panel
+
+**Install Project Dependencies**
+Bash
+npm install
+
+
+**Launch the Local Development Server**
+Bash
+npm run dev
+
+
+**Project Directory Structure**
+
+├── src/
+│   ├── components/
+│   │   ├── Sidebar.jsx        # Dynamic structural navigation menu
+│   │   ├── Header.jsx         # Global top navigation bar with Theme Toggles
+│   │   ├── StatsGrid.jsx      # Mobile-responsive analytics cards & progress tracking
+│   │   ├── SalesChart.jsx     # Recharts Pie/Donut category distribution breakdown
+│   │   └── TableSection.jsx   # Interactive recent orders grid & top products list
+│   ├── pages/
+│   │   └── Dashboard.jsx      # Core page compilation wrapper
+│   ├── App.jsx                # Layout orchestrator and global state controller
+│   └── main.jsx               # Application DOM mounting entry point
