@@ -20,7 +20,6 @@ const SalesChart = () => {
         </p>
       </div>
       
-      {/* Reduced explicit height slightly on mobile platforms to fit screen views natively */}
       <div className='h-40 sm:h-48 w-full mx-auto'>
         <ResponsiveContainer width='100%' height='100%'>
           <PieChart>
@@ -52,17 +51,19 @@ const SalesChart = () => {
 
       <div className='space-y-2.5 sm:space-y-3 mt-2'>
         {data.map((item, index) => {
-           return <div className='flex items-center justify-between' key={index}>
-            <div className='flex items-center space-x-2 sm:space-x-3 min-w-0'>
+           return (
+            <div className='flex items-center justify-between' key={index}>
+              <div className='flex items-center space-x-2 sm:space-x-3 min-w-0'>
                 <div className='w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full shrink-0' style={{backgroundColor:item.color}} />
                 <span className='text-xs sm:text-sm text-slate-600 dark:text-slate-400 truncate'>
                     {item.name}
                 </span>
-             </div>
-             <div className='text-xs sm:text-sm font-semibold text-slate-800 dark:text-white shrink-0 ml-2'>
+              </div>
+              <div className='text-xs sm:text-sm font-semibold text-slate-800 dark:text-white shrink-0 ml-2'>
                 {item.value}%
-             </div>
-           </div>;
+              </div>
+            </div>
+          );
         })}
       </div>
     </div>

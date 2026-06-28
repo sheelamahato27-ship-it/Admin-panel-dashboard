@@ -21,7 +21,7 @@ const RevenueChart = () => {
 
   return (
     <div className='bg-white dark:bg-slate-900 backdrop-blur-xl rounded-b-xl border border-slate-700 p-6'>
-      <div className='flex items-center justify-between mb-6'>
+      <div className='flex flex-col  items-center gap-4 sm:flex-row sm:items-center sm:justify-between justify-between mb-6'>
         <div>
           <h3 className='text-xl font-bold text-slate-800 dark:text-white'>
             Revenue Chart
@@ -30,7 +30,7 @@ const RevenueChart = () => {
             Monthly revenue and expenses
           </p>
         </div>
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center sm:space-x-4'>
           <div className='flex items-center space-x-2'>
             <div className='w-3 h-3 bg-linear-to-r from-blue-500 to-violet-600 rounded-full'></div>
             <div className='text-sm text-slate-600 dark:text-slate-400'>

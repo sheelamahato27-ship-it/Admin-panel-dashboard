@@ -48,6 +48,9 @@ const StatsGrid = () => {
     return (
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 w-full'>
             {stats.map((stat, index) => { 
+                // warm_greeting Store the component icon in a capitalized reference variable
+                const IconComponent = stat.icon;
+
                 return (
                     <div 
                         className='bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-6
@@ -80,8 +83,9 @@ const StatsGrid = () => {
                                 </div>
                             </div>
 
+                            {/* Render using the normalized capital component reference */}
                             <div className={`p-2.5 sm:p-3 rounded-xl ${stat.bgColor} group-hover:scale-105 transition-all duration-300 shrink-0`}>
-                                <stat.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.textColor}`}/>
+                                <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.textColor}`}/>
                             </div>
                         </div>
 

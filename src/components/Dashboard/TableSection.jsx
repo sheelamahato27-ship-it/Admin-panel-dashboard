@@ -69,9 +69,9 @@ const TableSection = () => {
     }
 
     return (
-        <div className='space-y-6 w-full max-w-full overflow-hidden'>
-            {/* Merged unified Order Table Container to avoid screen breaking */}
-            <div className='bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm'>
+        <div className='space-y-6 w-full min-w-0'>
+            {/* Unified Order Table Container */}
+            <div className='bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm w-full'>
                 <div className='p-4 sm:p-6 border-b border-slate-200 dark:border-slate-700'>
                     <div className='flex items-center justify-between gap-2'>
                         <div>
@@ -82,9 +82,10 @@ const TableSection = () => {
                     </div>
                 </div>
 
-                {/* Inline responsive scroll window */}
-                <div className='overflow-x-auto w-full continuous-scroll'>
-                    <table className='w-full text-left border-collapse min-w-150'>
+                {/* Secure horizontal scrolling window */}
+                <div className='overflow-x-auto w-full block sscrollbar-thin'>
+                    {/* warm_greeting Swapped broken min-w-150 to valid explicit pixel min-width */}
+                    <table className='w-full text-left border-collapse min-w-162.5'>
                         <thead>
                             <tr className='border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50'>
                                 <th onClick={() => requestSort('id')} className='p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 cursor-pointer select-none group'>
@@ -142,7 +143,7 @@ const TableSection = () => {
             </div>
 
             {/* Top Products View Card */}
-            <div className='bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm'>
+            <div className='bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm w-full'>
                 <div className='p-4 sm:p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center gap-2'>
                     <div>
                         <h3 className='text-base sm:text-lg font-bold text-slate-800 dark:text-white'>Top Products</h3>

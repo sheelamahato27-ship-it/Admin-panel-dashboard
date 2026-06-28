@@ -57,8 +57,8 @@ const ActivityFeed = () => {
     ];
 
     return (
-        <div className='bg-white dark:bg-slate-900 backdrop-blur-xl border border-slate-200 rounded-2xl dark:border-slate-700'>
-            <div className='p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center'>
+        <div className='bg-white dark:bg-slate-900 backdrop-blur-xl border border-slate-200 rounded-2xl dark:border-slate-700 w-full min-w-0'>
+            <div className='p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center gap-2'>
                 <div>
                     <h3 className='text-lg font-bold text-slate-800 dark:text-white'>
                         Activity Feed
@@ -67,7 +67,7 @@ const ActivityFeed = () => {
                         Recent System Activities
                     </p>
                 </div>
-                <button className='text-blue-600 hover:text-blue-700 text-sm font-medium'>
+                <button className='text-blue-600 hover:text-blue-700 text-sm font-medium whitespace-nowrap'>
                     View All
                 </button>
             </div>
@@ -79,18 +79,17 @@ const ActivityFeed = () => {
                         const IconComponent = activity.icon;
 
                         return (
-                            
-                            <div className='flex items-center space-x-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors' key={activity.id}>
+                            <div className='flex items-center space-x-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors w-full min-w-0' key={activity.id}>
                                 
-                                {/* Dynamically applied color, bgColor, and rendered the Icon */}
-                                <div className={`p-2 rounded-lg ${activity.bgColor} `}>
-                                    <activity.icon className={`w-5 h-5 ${activity.color}`} />
+                                {/* Prevents icon shape distortion on narrow mobile sizes */}
+                                <div className={`p-2 rounded-lg ${activity.bgColor} shrink-0`}>
+                                    <IconComponent className={`w-5 h-5 ${activity.color}`} />
                                 </div>
 
                                 <div className='flex-1 min-w-0'>
-                                    <h1 className='text-sm font-semibold text-slate-800 dark:text-white'>
+                                    <h3 className='text-sm font-semibold text-slate-800 dark:text-white truncate'>
                                         {activity.title}
-                                    </h1>
+                                    </h3>
                                     <p className='text-sm text-slate-600 dark:text-slate-400 truncate'>
                                         {activity.description}
                                     </p>
@@ -111,4 +110,4 @@ const ActivityFeed = () => {
     )
 }
 
-export default ActivityFeed
+export default ActivityFeed;
